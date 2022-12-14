@@ -1,30 +1,34 @@
 ### read
-get http://localhost:3000/products
+get http://localhost:3000/players
 
 ### read by id
-get http://localhost:3000/products/apcj6eslbgd0wf1
+get http://localhost:3000/players/apcj3hklbge9fnr
 
 ### delete
-delete http://localhost:3000/products/apcjgc4lbge9j06
+delete http://localhost:3000/players/apcj3hklbge9fnr
 
 ### post
-post http://localhost:3000/products
+post http://localhost:3000/players
 Content-Type: application/json
 
 {
-    "name": "Á1111",
-    "quantity": 24,
-    "price": 2500,
-    "type": "tejtermék"
+    "name": "Ronaldó",
+    "qualification": 5,
+    "position": "csatár",
+    "club": "Sehol",
+    "age": 37,
+    "nationality": "Portugál"
 }
 
 ### put
-put http://localhost:3000/products/apcj3hklbge9fnr
+put http://localhost:3000/players/apcj3hklbge9fnr
 Content-Type: application/json
 
 {
-    "name": "<script>alert('betörtem')</script> heló",
-    "quantity": 124,
-    "price": 3500,
-    "type": "kakaótermék"
+    "name": "Ronaldó",
+    "qualification": 5,
+    "position": "csatár",
+    "club": "Sehol",
+    "age": 37,
+    "nationality": "Portugál"
 }
