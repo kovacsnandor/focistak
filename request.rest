@@ -12,12 +12,12 @@ post http://localhost:3000/players
 Content-Type: application/json
 
 {
-    "name": "Ronaldó",
-    "qualification": 5,
+    "name": "Neymar",
+    "qualification": 8,
     "position": "csatár",
     "club": "Sehol",
     "age": 37,
-    "nationality": "Portugál"
+    "nationality": "Brazil"
 }
 
 ### put

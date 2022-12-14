@@ -16,5 +16,14 @@
     "club": "Barcelona",
     "age": 42,
     "nationality": "Argentína"
+  },
+  {
+    "id": "apcjcnolbnm5kj9",
+    "name": "Neymar",
+    "qualification": 8,
+    "position": "csatár",
+    "club": "Sehol",
+    "age": 37,
+    "type": ""
   }
 ]
