@@ -48,12 +48,12 @@ app.delete('/players/:id', function (req, res) {
 
     //beolvassuk az összes adatot: json -> obj
     fs.readFile(dataFile, (error, data)=>{
-        let products = JSON.parse(data);
+        let players = JSON.parse(data);
 
         //megkeressük a megfelelő product indexét id alján
-        const productsIndexById = products.findIndex(product => product.id === id)
+        const playersIndexById = players.findIndex(player => player.id === id)
 
-        if (productsIndexById === -1) {
+        if (playersIndexById === -1) {
             // nincs meg
             let message = {
                 error: `id: ${id} not found`
@@ -63,11 +63,11 @@ app.delete('/players/:id', function (req, res) {
             return;
         }
         //letöröljük
-        products.splice(productsIndexById, 1);
+        players.splice(playersIndexById, 1);
 
         //visszaír: obj -> json
-        products = JSON.stringify(products)
-        fs.writeFile(dataFile, products, (error)=>{
+        players = JSON.stringify(players)
+        fs.writeFile(dataFile, players, (error)=>{
             console.log(error);
             //visszaküldjük, hogy melyik id-t töröltük
             res.send({id: id});
