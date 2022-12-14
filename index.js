@@ -36,8 +36,8 @@ app.get('/players/:id', function (req, res) {
 //get products
 app.get('/players', function (req, res) {
     fs.readFile(dataFile, (error, data)=>{
-        let products = data;
-        res.send(products);
+        let players = data;
+        res.send(players);
     });
 })
 
