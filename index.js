@@ -78,21 +78,23 @@ app.delete('/players/:id', function (req, res) {
 //put product by id
 app.put('/players/:id', bodyParser.json(),function (req, res) {
     let id = req.params.id;
-    let putProduct = {
+    let putPlayer = {
         id: id, 
         name: sanitizeHtml(req.body.name),
-        quantity: req.body.quantity,
-        price: req.body.price,
-        type: sanitizeHtml(req.body.type)
+        qualification: req.body.qualification,
+        position: sanitizeHtml(req.body.position),
+        club: sanitizeHtml(req.body.club),
+        age: req.body.age,
+        nationality: sanitizeHtml(req.body.nationality)
     }
     //beolvassuk az összes adatot: json -> obj
     fs.readFile(dataFile, (error, data)=>{
-        let products = JSON.parse(data);
+        let players = JSON.parse(data);
 
         //megkeressük a megfelelő product indexét id alján
-        const productsIndexById = products.findIndex(product => product.id === id)
+        const playersIndexById = players.findIndex(player => player.id === id)
 
-        if (productsIndexById === -1) {
+        if (playersIndexById === -1) {
             // nincs meg
             let message = {
                 error: `id: ${id} not found`
@@ -102,14 +104,14 @@ app.put('/players/:id', bodyParser.json(),function (req, res) {
             return;
         }
         //felülírjuk
-        products[productsIndexById] = putProduct;
+        players[playersIndexById] = putPlayer;
 
         //visszaír: obj -> json
-        products = JSON.stringify(products)
-        fs.writeFile(dataFile, products, (error)=>{
+        players = JSON.stringify(players)
+        fs.writeFile(dataFile, players, (error)=>{
             console.log(error);
             //visszaküldjük, a módosított rekordot
-            res.send(putProduct);
+            res.send(putPlayer);
         })
     });
 })
@@ -123,7 +125,7 @@ app.post('/players',bodyParser.json(), function (req, res) {
         position: sanitizeHtml(req.body.position),
         club: sanitizeHtml(req.body.club),
         age: req.body.age,
-        type: sanitizeHtml(req.body.type)
+        nationality: sanitizeHtml(req.body.nationality)
     }
     
     fs.readFile(dataFile,(error, data)=>{

@@ -21,14 +21,14 @@ Content-Type: application/json
 }
 
 ### put
-put http://localhost:3000/players/apcj3hklbge9fnr
+put http://localhost:3000/players/apcjcnolbnm5kj9
 Content-Type: application/json
 
 {
-    "name": "Ronaldó",
-    "qualification": 5,
-    "position": "csatár",
-    "club": "Sehol",
-    "age": 37,
-    "nationality": "Portugál"
+    "name": "Neymar2",
+    "qualification": 6,
+    "position": "csatár2",
+    "club": "Seholse",
+    "age": 42,
+    "nationality": "Bazília"
 }
