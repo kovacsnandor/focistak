@@ -15,11 +15,11 @@ app.get('/players/:id', function (req, res) {
 
     //beolvassuk az összes adatot: json -> obj
     fs.readFile(dataFile, (error, data)=>{
-        let products = JSON.parse(data);
+        let players = JSON.parse(data);
 
         //megkeressük a megfelelő product-ot id alján
-        const productsById = products.find(product => product.id === id)
-        if (!productsById) {
+        const playersById = players.find(player => player.id === id)
+        if (!playersById) {
             // nincs meg
             let message = {
                 error: `id: ${id} not found`
@@ -29,7 +29,7 @@ app.get('/players/:id', function (req, res) {
             return;
         }
         //visszaküldjük
-        res.send(productsById);
+        res.send(playersById);
     });
 })
 

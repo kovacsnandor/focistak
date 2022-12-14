@@ -2,7 +2,7 @@
 get http://localhost:3000/players
 
 ### read by id
-get http://localhost:3000/players/apcj3hklbge9fnr
+get http://localhost:3000/players/apcj3hklbge9fnr-
 
 ### delete
 delete http://localhost:3000/players/apcj3hklbge9fnr
