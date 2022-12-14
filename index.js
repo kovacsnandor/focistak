@@ -4,13 +4,13 @@ const bodyParser = require("body-parser")
 const uniqid = require('uniqid'); 
 const sanitizeHtml = require('sanitize-html');
 
-const dataFile = "./data/products.json";
+const dataFile = "./data/players.json";
 const port = 3000
 
 const app = express()
 
 //get product by id
-app.get('/products/:id', function (req, res) {
+app.get('/players/:id', function (req, res) {
     let id = req.params.id;
 
     //beolvassuk az összes adatot: json -> obj
@@ -34,7 +34,7 @@ app.get('/products/:id', function (req, res) {
 })
 
 //get products
-app.get('/products', function (req, res) {
+app.get('/players', function (req, res) {
     fs.readFile(dataFile, (error, data)=>{
         let products = data;
         res.send(products);
@@ -43,7 +43,7 @@ app.get('/products', function (req, res) {
 
 
 //delete product by id
-app.delete('/products/:id', function (req, res) {
+app.delete('/players/:id', function (req, res) {
     let id = req.params.id;
 
     //beolvassuk az összes adatot: json -> obj
@@ -76,7 +76,7 @@ app.delete('/products/:id', function (req, res) {
 })
 
 //put product by id
-app.put('/products/:id', bodyParser.json(),function (req, res) {
+app.put('/players/:id', bodyParser.json(),function (req, res) {
     let id = req.params.id;
     let putProduct = {
         id: id, 
@@ -115,7 +115,7 @@ app.put('/products/:id', bodyParser.json(),function (req, res) {
 })
 
 //post
-app.post('/products',bodyParser.json(), function (req, res) {
+app.post('/players',bodyParser.json(), function (req, res) {
     let newProduct = {
         id: uniqid(), 
         name: sanitizeHtml(req.body.name),
