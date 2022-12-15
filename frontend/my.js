@@ -3,9 +3,6 @@ const url = "http://localhost:3000/players"
 
 
 async function playerAppend() {
-    console.log("passz");
-    //uj focista bevitele == post
-    try {
         let player = {
             name: document.getElementById("name").value,
             qualification: document.getElementById("qualification").value,
@@ -14,23 +11,19 @@ async function playerAppend() {
             age: document.getElementById("age").value,
             nationality: document.getElementById("nationality").value,
         }
-        let response = await fetch(url, {
-            method: "post",
+
+        let response = await fetch(url,{
+            method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(player)
+          });
 
-        }) 
-        if (!response.ok) {
-            throw "Post meghiúsult"
-        }
-
-    } catch (error) {
-        let message = "Post meghiúsult"
-        console.log(error);
-    }
+          let data = await response.json();
+          console.log(data);
+        
+        
 }
 
 function testDataToForm(){
