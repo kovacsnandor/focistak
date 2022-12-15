@@ -81,10 +81,10 @@ app.put('/players/:id', bodyParser.json(),function (req, res) {
     let putPlayer = {
         id: id, 
         name: sanitizeHtml(req.body.name),
-        qualification: req.body.qualification,
+        qualification: +sanitizeHtml(req.body.qualification),
         position: sanitizeHtml(req.body.position),
         club: sanitizeHtml(req.body.club),
-        age: req.body.age,
+        age: +sanitizeHtml(req.body.age),
         nationality: sanitizeHtml(req.body.nationality)
     }
     //beolvassuk az összes adatot: json -> obj

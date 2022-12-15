@@ -25,8 +25,8 @@ put http://localhost:3000/players/apcjcnolbnm5kj9
 Content-Type: application/json
 
 {
-    "name": "Neymar2",
-    "qualification": 6,
+    "name": "<script>alert('betörtem')</script>Neymar3",
+    "qualification": "<script>alert('betörtem')</script>Neymar",
     "position": "csatár2",
     "club": "Seholse",
     "age": 42,
