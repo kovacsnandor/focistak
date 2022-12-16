@@ -1,6 +1,6 @@
 const url = "http://localhost:3000/players"
 
-
+console.log("heló");
 
 async function playerAppend() {
         let player = {
